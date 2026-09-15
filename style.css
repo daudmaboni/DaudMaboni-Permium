@@ -1966,156 +1966,43 @@ display:none
    MOBILE FOOTER
    ----------------------------------------- */
 
-.site-footer{
-padding:60px 20px 25px
-}
-
-.site-footer nav{
-width:100%;
-max-width:360px;
-flex-wrap:wrap;
-gap:18px 25px;
-padding:17px 20px
-}
-
-.site-footer>p{
-line-height:1.8;
-max-width:300px;
-margin:25px 0
-}
-
-.site-footer .copyright{
-margin-top:35px
-}
-
-}
-
-
-/* =========================================
-   SMALL MOBILE
-   ========================================= */
-
 @media(max-width:560px){
+  .site-header{width:calc(100% - 20px)}
+  .hero{padding-inline:20px}
+  .hero-portrait{min-height:405px}
+  .portrait-frame{height:355px;width:min(280px,74vw)}
+  .float-one{top:50px}
+  .float-two{bottom:15px}
+  .hero-copy{font-size:14px}
+  .hero-proof{gap:14px}
+  .hero-proof div{padding-right:14px}
+  .hero-proof strong{font-size:19px}
+  .hero-proof small{font-size:6px}
+  .section{padding:85px 20px}
+  .section h2{font-size:43px}
+  .services-grid,.portfolio-grid,.testimonial-grid{margin-top:45px}
+  .project-image,.project-wide .project-image{height:270px}
+  .browser{width:83%;height:72%}
+  .browser-content{padding:18px}
+  .browser-content h3{font-size:27px;margin:25px 0}
+  .campaign-ui{width:82%}
+  .campaign-ui h3{font-size:25px}
+  .skills-list div{grid-template-columns:35px 1fr}
+  .skills-list small{display:none}
+  .reason-grid{grid-template-columns:1fr}
+  .reason:nth-child(even){padding-left:0;border-left:0}
 
-.site-header{
-width:calc(100% - 20px)
+  /* CHANGED */
+  .process-grid{
+    grid-template-columns:1fr 1fr;
+    gap:45px 18px;
+  }
+
+  .contact-section{padding:90px 20px}
+  .contact-inner h2{font-size:61px}
+  .contact-details{line-height:1.5}
+  .site-footer{padding-inline:20px}
 }
-
-.hero{
-padding-inline:20px
-}
-
-.hero-portrait{
-min-height:405px
-}
-
-.portrait-frame{
-height:355px;
-width:min(280px,74vw)
-}
-
-.float-one{
-top:50px
-}
-
-.float-two{
-bottom:15px
-}
-
-.hero-copy{
-font-size:14px
-}
-
-.hero-proof{
-gap:14px
-}
-
-.hero-proof div{
-padding-right:14px
-}
-
-.hero-proof strong{
-font-size:19px
-}
-
-.hero-proof small{
-font-size:6px
-}
-
-.section{
-padding:85px 20px
-}
-
-.section h2{
-font-size:43px
-}
-
-.services-grid,
-.portfolio-grid,
-.testimonial-grid{
-margin-top:45px
-}
-
-.project-image,
-.project-wide .project-image{
-height:270px
-}
-
-.browser{
-width:83%;
-height:72%
-}
-
-.browser-content{
-padding:18px
-}
-
-.browser-content h3{
-font-size:27px;
-margin:25px 0
-}
-
-.campaign-ui{
-width:82%
-}
-
-.campaign-ui h3{
-font-size:25px
-}
-
-.skills-list div{
-grid-template-columns:35px 1fr
-}
-
-.skills-list small{
-display:none
-}
-
-.reason-grid{
-grid-template-columns:1fr
-}
-
-.reason:nth-child(even){
-padding-left:0;
-border-left:0
-}
-
-.process-grid{
-grid-template-columns:1fr
-}
-
-.contact-section{
-padding:90px 20px
-}
-
-.contact-inner h2{
-font-size:61px
-}
-
-.contact-details{
-line-height:1.5
-}
-
 
 /* -----------------------------------------
    SMALL SCREEN FOOTER
@@ -2453,3 +2340,814 @@ transition:none
 
 
 
+/* =========================================================
+   PROCESS — MOBILE 2 × 2 GRID
+   ========================================================= */
+
+@media (max-width: 560px){
+
+  .process-grid{
+    grid-template-columns: 1fr 1fr;
+    gap: 45px 18px;
+    margin-top: 45px;
+  }
+
+  .process-step{
+    padding: 0;
+  }
+
+  .process-step:not(:last-child):after{
+    display:none;
+  }
+
+  .process-step>span{
+    width: 58px;
+    height: 58px;
+    margin-bottom: 24px;
+  }
+
+  .process-step h3{
+    font-size: 17px;
+    margin: 0 0 10px;
+  }
+
+  .process-step p{
+    max-width: none;
+    font-size: 10px;
+    line-height: 1.65;
+    margin: 0;
+  }
+
+}
+
+/* =========================================================
+   DARK / LIGHT MODE
+   ========================================================= */
+
+:root{
+  --theme-bg:#080808;
+  --theme-surface:#101010;
+  --theme-surface-2:#151515;
+  --theme-text:#f7f6f2;
+  --theme-muted:#999993;
+  --theme-dim:#666662;
+  --theme-line:#2b2b2b;
+  --theme-line-strong:#3b3b3b;
+  --theme-grid:#ffffff0b;
+}
+
+html{
+  background:var(--theme-bg);
+}
+
+body{
+  background:var(--theme-bg);
+  color:var(--theme-text);
+  transition:
+    background-color .45s ease,
+    color .45s ease;
+}
+
+/* =========================================================
+   THEME BUTTON
+   ========================================================= */
+
+.theme-toggle{
+  width:42px;
+  height:42px;
+  margin-left:18px;
+  padding:0;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  border:1px solid #ffffff22;
+  border-radius:50%;
+
+  background:#111c;
+  color:#fff;
+
+  cursor:pointer;
+
+  transition:
+    background .35s ease,
+    border-color .35s ease,
+    color .35s ease,
+    transform .35s cubic-bezier(.22,1,.36,1),
+    box-shadow .35s ease;
+
+  flex-shrink:0;
+}
+
+.theme-toggle:hover{
+  transform:rotate(12deg) scale(1.06);
+  border-color:#777;
+  box-shadow:0 8px 30px #0008;
+}
+
+.theme-icon{
+  position:absolute;
+  font-size:19px;
+  line-height:1;
+
+  transition:
+    opacity .3s ease,
+    transform .4s cubic-bezier(.22,1,.36,1);
+}
+
+.theme-icon.sun{
+  opacity:1;
+  transform:rotate(0deg) scale(1);
+}
+
+.theme-icon.moon{
+  opacity:0;
+  transform:rotate(-45deg) scale(.5);
+}
+
+/* =========================================================
+   LIGHT MODE
+   ========================================================= */
+
+html[data-theme="light"]{
+  --theme-bg:#f3f2ed;
+  --theme-surface:#ffffff;
+  --theme-surface-2:#e9e8e2;
+  --theme-text:#111;
+  --theme-muted:#666660;
+  --theme-dim:#8a8a84;
+  --theme-line:#d8d7d1;
+  --theme-line-strong:#bdbcb6;
+  --theme-grid:#0000000b;
+}
+
+html[data-theme="light"] body{
+  background:#f3f2ed;
+  color:#111;
+}
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+html[data-theme="light"] .site-header{
+  background:#f4f3eee8;
+  border-color:#00000018;
+  box-shadow:0 15px 50px #0000000d;
+}
+
+html[data-theme="light"] .site-header.scrolled{
+  background:#f4f3eff5;
+  box-shadow:0 20px 60px #00000018;
+}
+
+html[data-theme="light"] .logo-text strong{
+  color:#111;
+}
+
+html[data-theme="light"] .logo-text small{
+  color:#888780;
+}
+
+html[data-theme="light"] .desktop-nav{
+  color:#666660;
+}
+
+html[data-theme="light"] .desktop-nav a:hover{
+  color:#000;
+}
+
+html[data-theme="light"] .nav-button{
+  color:#111 !important;
+  border-color:#999;
+}
+
+html[data-theme="light"] .theme-toggle{
+  background:#fff;
+  color:#111;
+  border-color:#00000022;
+  box-shadow:0 5px 20px #0000000c;
+}
+
+html[data-theme="light"] .theme-toggle:hover{
+  border-color:#777;
+  box-shadow:0 8px 25px #00000018;
+}
+
+html[data-theme="light"] .theme-icon.sun{
+  opacity:0;
+  transform:rotate(45deg) scale(.5);
+}
+
+html[data-theme="light"] .theme-icon.moon{
+  opacity:1;
+  transform:rotate(0deg) scale(1);
+}
+
+/* =========================================================
+   MOBILE MENU
+   ========================================================= */
+
+html[data-theme="light"] .mobile-menu span{
+  background:#111;
+}
+
+html[data-theme="light"] .mobile-nav{
+  background:#f5f4f0f5;
+  border-color:#00000020;
+  box-shadow:0 25px 70px #00000015;
+}
+
+html[data-theme="light"] .mobile-nav a{
+  color:#222;
+  border-color:#dddcd6;
+}
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+html[data-theme="light"] .hero{
+  background:#f3f2ed;
+}
+
+html[data-theme="light"] .hero-grid{
+  background:
+    linear-gradient(#0000000b 1px,transparent 1px),
+    linear-gradient(90deg,#0000000b 1px,transparent 1px);
+}
+
+html[data-theme="light"] .halo{
+  border-color:#0000000d;
+}
+
+html[data-theme="light"] .halo-one{
+  box-shadow:0 0 100px #00000008;
+}
+
+html[data-theme="light"] .halo-two{
+  box-shadow:0 0 80px #00000006;
+}
+
+html[data-theme="light"] .availability{
+  border-color:#c8c7c1;
+  color:#77766f;
+}
+
+html[data-theme="light"] .availability span{
+  background:#222;
+  box-shadow:0 0 12px #00000030;
+}
+
+html[data-theme="light"] .kicker,
+html[data-theme="light"] .section-label{
+  color:#77766f;
+}
+
+html[data-theme="light"] .hero h1{
+  color:#111;
+}
+
+html[data-theme="light"] .hero h1 span{
+  color:#77766f;
+}
+
+html[data-theme="light"] .hero h1 em{
+  color:#111;
+}
+
+html[data-theme="light"] .hero-copy{
+  color:#666660;
+}
+
+html[data-theme="light"] .hero-copy b{
+  color:#222;
+}
+
+html[data-theme="light"] .button-light{
+  background:#111;
+  color:#fff;
+}
+
+html[data-theme="light"] .button-line{
+  border-color:#aaa;
+  color:#222;
+}
+
+html[data-theme="light"] .button-line:hover{
+  border-color:#333;
+}
+
+html[data-theme="light"] .hero-proof div{
+  border-color:#d2d1cb;
+}
+
+html[data-theme="light"] .hero-proof strong{
+  color:#111;
+}
+
+html[data-theme="light"] .hero-proof small{
+  color:#777;
+}
+
+/* =========================================================
+   HERO PORTRAIT
+   ========================================================= */
+
+html[data-theme="light"] .portrait-frame{
+  border-color:#aaa9a2;
+  box-shadow:0 35px 100px #00000025;
+}
+
+html[data-theme="light"] .portrait-ring{
+  border-color:#00000012;
+  box-shadow:0 0 90px #00000008;
+}
+
+html[data-theme="light"] .portrait-caption{
+  border-color:#ffffff55;
+}
+
+html[data-theme="light"] .portrait-caption span{
+  color:#ddd;
+}
+
+html[data-theme="light"] .portrait-caption b{
+  color:#fff;
+}
+
+html[data-theme="light"] .floating-card{
+  background:#ffffffd9;
+  border-color:#c5c4be;
+  color:#111;
+  box-shadow:0 20px 55px #00000018;
+}
+
+html[data-theme="light"] .floating-card small{
+  color:#777;
+}
+
+html[data-theme="light"] .floating-card b{
+  color:#111;
+}
+
+html[data-theme="light"] .float-one .dot{
+  background:#111;
+  box-shadow:0 0 12px #00000050;
+}
+
+/* =========================================================
+   TICKER
+   ========================================================= */
+
+html[data-theme="light"] .ticker{
+  background:#ebeae4;
+  border-color:#d4d3cd;
+  color:#666660;
+}
+
+html[data-theme="light"] .ticker i{
+  color:#111;
+}
+
+/* =========================================================
+   GENERAL SECTIONS
+   ========================================================= */
+
+html[data-theme="light"] .section{
+  background:#f3f2ed;
+}
+
+html[data-theme="light"] .section h2{
+  color:#111;
+}
+
+html[data-theme="light"] .section h2 span{
+  color:#85847e;
+}
+
+html[data-theme="light"] .about-copy p{
+  color:#666660;
+}
+
+html[data-theme="light"] .about-copy b{
+  color:#222;
+}
+
+html[data-theme="light"] .arrow-link{
+  border-color:#999;
+  color:#222;
+}
+
+/* =========================================================
+   SERVICES
+   ========================================================= */
+
+html[data-theme="light"] .services-section{
+  background:#eae9e3;
+  border-color:#d5d4ce;
+}
+
+html[data-theme="light"] .section-top>p{
+  color:#70706a;
+}
+
+html[data-theme="light"] .service-card{
+  background:#f7f6f1;
+  border-color:#d0cfc9;
+  box-shadow:none;
+}
+
+html[data-theme="light"] .service-card:hover{
+  border-color:#999;
+  box-shadow:0 30px 70px #00000012;
+}
+
+html[data-theme="light"] .service-card.featured{
+  background:linear-gradient(145deg,#fff,#ecebe5);
+}
+
+html[data-theme="light"] .service-head{
+  color:#77766f;
+}
+
+html[data-theme="light"] .service-icon{
+  color:#222;
+}
+
+html[data-theme="light"] .service-card h3{
+  color:#111;
+}
+
+html[data-theme="light"] .service-card>p{
+  color:#666660;
+}
+
+html[data-theme="light"] .service-card ul{
+  border-color:#d5d4ce;
+}
+
+html[data-theme="light"] .service-card li{
+  color:#666660;
+  border-color:#deddd7;
+}
+
+html[data-theme="light"] .service-card li:before{
+  color:#111;
+}
+
+/* Service image fades */
+
+html[data-theme="light"] .meta-service::before{
+  background-image:
+    linear-gradient(
+      to bottom,
+      rgba(247,246,241,.12) 0%,
+      rgba(247,246,241,.28) 48%,
+      rgba(247,246,241,.92) 92%,
+      #f7f6f1 100%
+    ),
+    url("assets/MetaLogo.png");
+}
+
+html[data-theme="light"] .meta-service::after{
+  background:
+    radial-gradient(
+      circle at 50% 35%,
+      rgba(255,255,255,.16),
+      transparent 55%
+    ),
+    linear-gradient(
+      to bottom,
+      transparent 50%,
+      #f7f6f1 100%
+    );
+}
+
+html[data-theme="light"] .website-service::before{
+  background-image:
+    linear-gradient(
+      to bottom,
+      rgba(255,255,255,.12) 0%,
+      rgba(255,255,255,.28) 45%,
+      rgba(255,255,255,.88) 90%,
+      #fff 100%
+    ),
+    url("assets/WebsiteDesignBunner.jpg");
+}
+
+html[data-theme="light"] .website-service::after{
+  background:
+    radial-gradient(
+      circle at 50% 30%,
+      rgba(255,255,255,.15),
+      transparent 58%
+    ),
+    linear-gradient(
+      to bottom,
+      transparent 45%,
+      #fff 100%
+    );
+}
+
+html[data-theme="light"] .app-service::before{
+  background-image:
+    linear-gradient(
+      to bottom,
+      rgba(255,255,255,.12) 0%,
+      rgba(255,255,255,.28) 45%,
+      rgba(255,255,255,.88) 90%,
+      #f7f6f1 100%
+    ),
+    url("assets/DesigningMobileApp.png");
+}
+
+html[data-theme="light"] .app-service::after{
+  background:
+    radial-gradient(
+      circle at 50% 30%,
+      rgba(255,255,255,.15),
+      transparent 58%
+    ),
+    linear-gradient(
+      to bottom,
+      transparent 45%,
+      #f7f6f1 100%
+    );
+}
+
+/* =========================================================
+   WORK / PORTFOLIO
+   ========================================================= */
+
+html[data-theme="light"] .project-card{
+  background:#f7f6f1;
+  border-color:#d0cfc9;
+}
+
+html[data-theme="light"] .project-card:hover{
+  border-color:#999;
+  box-shadow:0 25px 60px #00000012;
+}
+
+html[data-theme="light"] .project-info{
+  color:#111;
+}
+
+html[data-theme="light"] .project-info small{
+  color:#77766f;
+}
+
+html[data-theme="light"] .project-info h3{
+  color:#111;
+}
+
+html[data-theme="light"] .project-info p{
+  color:#77766f;
+}
+
+html[data-theme="light"] .project-info>b{
+  color:#555;
+}
+
+/* =========================================================
+   SKILLS
+   ========================================================= */
+
+html[data-theme="light"] .skills-list{
+  border-color:#d2d1cb;
+}
+
+html[data-theme="light"] .skills-list div{
+  border-color:#d2d1cb;
+}
+
+html[data-theme="light"] .skills-list span{
+  color:#888780;
+}
+
+html[data-theme="light"] .skills-list b{
+  color:#222;
+}
+
+html[data-theme="light"] .skills-list small{
+  color:#888780;
+}
+
+html[data-theme="light"] .skills-copy p{
+  color:#70706a;
+}
+
+/* =========================================================
+   WHY ME
+   ========================================================= */
+
+html[data-theme="light"] .why-section{
+  background:#eae9e3;
+  border-color:#d4d3cd;
+}
+
+html[data-theme="light"] .why-intro p{
+  color:#70706a;
+}
+
+html[data-theme="light"] .reason{
+  border-color:#d2d1cb;
+}
+
+html[data-theme="light"] .reason:nth-child(even){
+  border-color:#d2d1cb;
+}
+
+html[data-theme="light"] .reason>span{
+  color:#888780;
+}
+
+html[data-theme="light"] .reason h3{
+  color:#222;
+}
+
+html[data-theme="light"] .reason p{
+  color:#70706a;
+}
+
+/* =========================================================
+   PROCESS
+   ========================================================= */
+
+html[data-theme="light"] .process-step:not(:last-child):after{
+  border-color:#aaa9a2;
+}
+
+html[data-theme="light"] .process-step>span{
+  background:#f3f2ed;
+  border-color:#999;
+  color:#222;
+}
+
+html[data-theme="light"] .process-step h3{
+  color:#111;
+}
+
+html[data-theme="light"] .process-step p{
+  color:#70706a;
+}
+
+/* =========================================================
+   TESTIMONIALS
+   ========================================================= */
+
+html[data-theme="light"] .testimonial{
+  background:#f7f6f1;
+  border-color:#d0cfc9;
+}
+
+html[data-theme="light"] .testimonial p{
+  color:#222;
+}
+
+html[data-theme="light"] .testimonial footer{
+  border-color:#d5d4ce;
+}
+
+html[data-theme="light"] .testimonial footer b{
+  color:#222;
+}
+
+html[data-theme="light"] .testimonial footer small{
+  color:#888780;
+}
+
+html[data-theme="light"] .quote-mark{
+  color:#999;
+}
+
+/* =========================================================
+   CONTACT
+   ========================================================= */
+
+html[data-theme="light"] .contact-section{
+  background:#111;
+  color:#fff;
+}
+
+html[data-theme="light"] .contact-inner h2{
+  color:#fff;
+}
+
+html[data-theme="light"] .contact-inner h2 span{
+  color:#888;
+}
+
+html[data-theme="light"] .contact-inner>p{
+  color:#aaa;
+}
+
+html[data-theme="light"] .dark-label{
+  color:#888;
+}
+
+html[data-theme="light"] .dark-label span{
+  color:#bbb;
+}
+
+html[data-theme="light"] .whatsapp-button{
+  border-color:#777;
+  color:#fff;
+}
+
+html[data-theme="light"] .whatsapp-button:hover{
+  background:#fff;
+  color:#111;
+}
+
+html[data-theme="light"] .wa-text small{
+  color:#888;
+}
+
+html[data-theme="light"] .contact-details{
+  color:#888;
+}
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+html[data-theme="light"] .site-footer{
+  background:#111;
+  border-color:#292929;
+  color:#888;
+}
+
+html[data-theme="light"] .site-footer .logo-text strong{
+  color:#fff;
+}
+
+html[data-theme="light"] .site-footer .logo-text small{
+  color:#777;
+}
+
+html[data-theme="light"] .site-footer>p{
+  color:#777;
+}
+
+html[data-theme="light"] .site-footer nav{
+  border-color:#333;
+}
+
+html[data-theme="light"] .site-footer nav a{
+  color:#777;
+}
+
+html[data-theme="light"] .site-footer nav a:hover{
+  color:#fff;
+}
+
+html[data-theme="light"] .site-footer .copyright{
+  border-color:#292929;
+  color:#555;
+}
+
+/* =========================================================
+   CURSOR / GRAIN
+   ========================================================= */
+
+html[data-theme="light"] .cursor-glow{
+  background:radial-gradient(
+    circle,
+    rgba(0,0,0,.035),
+    transparent 65%
+  );
+}
+
+html[data-theme="light"] .grain{
+  opacity:.018;
+}
+
+/* =========================================================
+   SMOOTH THEME TRANSITION
+   ========================================================= */
+
+body,
+.site-header,
+.mobile-nav,
+.service-card,
+.project-card,
+.testimonial,
+.why-section,
+.services-section,
+.ticker,
+.site-footer,
+.process-step>span,
+.skills-list div,
+.skills-list,
+.reason,
+.hero,
+.section{
+  transition:
+    background-color .45s ease,
+    color .45s ease,
+    border-color .45s ease,
+    box-shadow .45s ease;
+}

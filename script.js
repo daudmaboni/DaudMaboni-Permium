@@ -205,6 +205,128 @@ if (year) {
 
 
 /* =========================================================
+   DARK / LIGHT MODE
+   ========================================================= */
+
+const themeToggle =
+    document.getElementById("themeToggle");
+
+const root =
+    document.documentElement;
+
+
+/* -----------------------------------------
+   APPLY THEME
+   ----------------------------------------- */
+
+function applyTheme(theme) {
+
+    root.setAttribute(
+        "data-theme",
+        theme
+    );
+
+    localStorage.setItem(
+        "daud-theme",
+        theme
+    );
+
+
+    /* -----------------------------------------
+       UPDATE BUTTON ACCESSIBILITY
+       ----------------------------------------- */
+
+    if (themeToggle) {
+
+        themeToggle.setAttribute(
+            "aria-label",
+            theme === "light"
+                ? "Switch to dark mode"
+                : "Switch to light mode"
+        );
+
+        themeToggle.setAttribute(
+            "title",
+            theme === "light"
+                ? "Switch to dark mode"
+                : "Switch to light mode"
+        );
+
+    }
+
+
+    /* -----------------------------------------
+       UPDATE BROWSER THEME COLOR
+       ----------------------------------------- */
+
+    const metaTheme =
+        document.querySelector(
+            'meta[name="theme-color"]'
+        );
+
+    if (metaTheme) {
+
+        metaTheme.setAttribute(
+            "content",
+            theme === "light"
+                ? "#f3f2ed"
+                : "#080808"
+        );
+
+    }
+
+}
+
+
+/* -----------------------------------------
+   LOAD SAVED THEME
+   ----------------------------------------- */
+
+const savedTheme =
+    localStorage.getItem(
+        "daud-theme"
+    );
+
+
+applyTheme(
+    savedTheme === "light" ||
+    savedTheme === "dark"
+        ? savedTheme
+        : "dark"
+);
+
+
+/* -----------------------------------------
+   THEME TOGGLE
+   ----------------------------------------- */
+
+if (themeToggle) {
+
+    themeToggle.addEventListener(
+        "click",
+        () => {
+
+            const currentTheme =
+                root.getAttribute(
+                    "data-theme"
+                ) || "dark";
+
+
+            const newTheme =
+                currentTheme === "dark"
+                    ? "light"
+                    : "dark";
+
+
+            applyTheme(newTheme);
+
+        }
+    );
+
+}
+
+
+/* =========================================================
    HERO IMAGE SLIDESHOW
    ========================================================= */
 
@@ -289,8 +411,11 @@ document.addEventListener(
 
 
             if (index === currentSlide) {
+
                 updateProgress(index);
+
                 return;
+
             }
 
 
@@ -437,11 +562,13 @@ document.addEventListener(
 
                         event.stopPropagation();
 
+
                         if (
                             index === currentSlide
                         ) {
                             return;
                         }
+
 
                         showSlide(index);
 
@@ -498,7 +625,9 @@ document.addEventListener(
             "keydown",
             (event) => {
 
-                if (event.key === "ArrowRight") {
+                if (
+                    event.key === "ArrowRight"
+                ) {
 
                     event.preventDefault();
 
@@ -509,7 +638,9 @@ document.addEventListener(
                 }
 
 
-                if (event.key === "ArrowLeft") {
+                if (
+                    event.key === "ArrowLeft"
+                ) {
 
                     event.preventDefault();
 
